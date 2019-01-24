@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSS02</title>
+<!--  <style scope="paper-ripple">
+    paper-ripple {
+      display: block;
+      position: absolute;
+      border-radius: inherit;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+}
+
+paper-ripple[animating] {
+  -webkit-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+paper-ripple[noink] {
+  pointer-events: none;
+}
+
+#background.paper-ripple,
+    #waves.paper-ripple,
+    .wave-container.paper-ripple,
+    .wave.paper-ripple {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#background.paper-ripple,
+    .wave.paper-ripple {
+  opacity: 0;
+}
+
+#waves.paper-ripple,
+    .wave.paper-ripple {
+  overflow: hidden;
+}
+
+.wave-container.paper-ripple,
+    .wave.paper-ripple {
+  border-radius: 50%;
+}
+
+paper-ripple.circle #background.paper-ripple,
+    paper-ripple.circle #waves.paper-ripple {
+  border-radius: 50%;
+}
+
+paper-ripple.circle .wave-container.paper-ripple {
+  overflow: hidden;
+}
+  
+  
+  </style>
+-->
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+  <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/vanilla-ripplejs@1.0.6';
+  </script>
+</head>
+
+<body>
+  <div class="layer1">
+      <header>
+        <h1>Great to see you again!</h1>
+      </header>
+      <form class="layer2">
+        
+      <div class="input1">
+        <div class="inputArea">
+          <input type="text" id="id">
+          <div class="extraInfo">test</div>
+          <p id="_id">Username / email</p>
+        </div>
+      </div>
+      <div class="input2">
+        <div class="inputArea">
+          <input type="password" id="pwd">
+          <div class="extraInfo">
+              Type 6 characters or more
+          </div>
+          <p id="_pwd">Password</p>
+          <p id="show">
+            <span><input type="checkbox"></span>
+            <span class="checkLabel">show</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="send_btn">
+        <button type="button">Login
+          <div class="rippleJS"></div>
+        <!--  <paper-ripple class="teflon" animating>
+            <div id="background" class="style-scope paper-ripple" style="opacity: 0.56;"></div>
+            <div id="waves" class="style-scope paper-ripple"></div>
+          </paper-ripple> -->
+        </button>
+      </div>
+    </form>
+  
+    <footer>
+      <div class="line_1">
+      <span>
+        <a href="#">Forgot Password?</a>
+      </span>
+      <span>
+        Don't have an account? <a href="#">Get started</a>
+      </span>
+      </div>
+      <div>
+        Looking for the Mac app? <a href="#">Download here</a>
+      </div>
+      </footer>
+  </div>
+</body>
+
+</html>
