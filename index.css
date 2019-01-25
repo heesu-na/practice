@@ -36,8 +36,6 @@ header h1 {
     height: 40px;
     margin: 0px;
     padding: 0px;
-    background-color: transparent;
-    z-index: 10;
 }
 .inputArea:focus {
     margin-bottom: 5px;
@@ -61,8 +59,9 @@ header h1 {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid #fecf33;
+    border-bottom: 1px solid #ffbe2f;
 }
+
 
 #_id, #_pwd {
     position: absolute;
@@ -75,6 +74,17 @@ header h1 {
     left: 0px;
     z-index: 2;
 }
+.inputArea > input:focus ~ #_id, .inputArea > input:focus ~ #_pwd {
+    font-size: 15px;
+    left: 0px;
+    top: -33px;
+    padding: 0;
+    -webkit-transition: linear 0.2s;
+    transition: linear 0.2s;
+    color: #ffbe2f;
+    z-index: 3;
+}
+
 #show{
     position: absolute;
     font-size: 12px;
@@ -114,7 +124,7 @@ div.send_btn > button {
 div.send_btn > button:hover {
     cursor: pointer;
 }
-
+/*
 .layer2 {
     animation: swing ease-in-out 0.08s 8 alternate;
     transform-origin: center center;
@@ -123,7 +133,7 @@ div.send_btn > button:hover {
     0% {transform: rotate(1deg);}
     100% {transform: rotate(-1deg);}
 }
-
+*/
 footer {
     width: 350px;
     color: #c7c4c7;
@@ -145,9 +155,9 @@ footer > .line_1 {
 
 .rippleJS .ripple {
     background-color: darkgray;
-    opacity: 0.8;
+    opacity: 1;
     -webkit-transition: -webkit-transform 0.4s ease-out, opacity 0.4s ease-out;
     transition: transform 0.5s ease-out, opacity 1s ease-out;
-    /*속도조정, 범위조정*/
+ 
 }
 
