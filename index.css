@@ -60,6 +60,7 @@ header h1 {
     border-left: none;
     border-right: none;
     border-bottom: 1px solid #ffbe2f;
+
 }
 
 
@@ -73,15 +74,6 @@ header h1 {
     bottom: -10px;
     left: 0px;
     z-index: 2;
-}
-.inputArea > input:focus ~ #_id, .inputArea > input:focus ~ #_pwd {
-    font-size: 15px;
-    left: 0px;
-    top: -33px;
-    padding: 0;
-    -webkit-transition: linear 0.2s;
-    transition: linear 0.2s;
-    color: #ffbe2f;
 }
 
 #show{

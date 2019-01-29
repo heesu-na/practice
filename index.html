@@ -4,8 +4,6 @@
 <head>
   <title>CSS02</title>
   <link rel="stylesheet" href="./index.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="index.js"></script>
   <script type="module">
     import 'https://cdn.jsdelivr.net/npm/vanilla-ripplejs@1.0.6';
   </script>
@@ -20,14 +18,14 @@
 
       <div class="input1">
         <div class="inputArea">
-          <input type="text" id="id">
+          <input type="text" id="id" onkeyup="check_input_len(this.value, this.id)" onblur="check_focus(this.id)">
           <div class="extraInfo">test</div>
           <p id="_id">Username / email</p>
         </div>
       </div>
       <div class="input2">
         <div class="inputArea">
-          <input type="password" id="pwd">
+          <input type="password" id="pwd" onkeyup="check_input_len(this.value, this.id)" onblur="check_focus(this.id)">
           <div class="extraInfo">
             Type 6 characters or more
           </div>
@@ -60,6 +58,8 @@
       </div>
     </footer>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
