@@ -14,31 +14,30 @@
     <header>
       <h1>Great to see you again!</h1>
     </header>
-    <form class="layer2">
+    <form class="layer2" onsubmit="animate()">
 
       <div class="input1">
         <div class="inputArea">
-          <input type="text" id="id" onkeyup="check_input_len(this.value, this.id)" onblur="check_focus(this.id)">
-          <div class="extraInfo">test</div>
-          <p id="_id">Username / email</p>
+          <p id="_id" class="input_label">Username / email</p>
+          <input type="text" id="id" class="input_layout" onkeyup="check_input_len(this.value, this.id)" onfocusin="focus_in(this.value, this.id)" onfocusout="focus_out(this.id)">
+          <div class="extraInfo"></div>
         </div>
       </div>
       <div class="input2">
-        <div class="inputArea">
-          <input type="password" id="pwd" onkeyup="check_input_len(this.value, this.id)" onblur="check_focus(this.id)">
+        <div class="inputArea" onmouseover="show_checkbox()" onmouseout="hide_checkbox()">
+          <p id="_pwd" class="input_label">Password</p>
+          <input type="password" id="pwd" class="input_layout" onkeyup="check_input_len(this.value, this.id)" onfocusin= "focus_in(this.value, this.id); show_checkbox();" onfocusout="focus_out(this.id); hide_checkbox();">
           <div class="extraInfo">
-            Type 6 characters or more
+            
           </div>
-          <p id="_pwd">Password</p>
-          <p id="show">
-            <span><input type="checkbox"></span>
-            <span class="checkLabel">show</span>
+          <p id="show_check" class="check_input">
+            <label><input type="checkbox" onclick="show_or_hide(event)"> show</label>
           </p>
         </div>
       </div>
 
       <div class="send_btn">
-        <button type="button">Login
+        <button type="button" type="submit">Login
           <div class="rippleJS"></div>
         </button>
       </div>
