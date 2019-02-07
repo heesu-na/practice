@@ -107,14 +107,15 @@ header h1 {
     display: none;
     font-size: 12px;
     text-align: left;
-}
+} 
+/*사이즈 옆으로 밀기*/
 
-.inputArea > input:focus + .extraInfo {
+.focus_extraInfo {
     display: block;
     margin-top: 3px;
 }
 
-div.send_btn > button {
+.submit_btn {
     position: relative;
     width: 350px;
     height: 60px;
@@ -125,11 +126,11 @@ div.send_btn > button {
     font-size: 18px;
     font-weight: 300;
 }
-div.send_btn > button:hover {
+.btn_cursor {
     cursor: pointer;
 }
-/*
-.layer2 {
+
+.animation {
     animation: swing ease-in-out 0.08s 8 alternate;
     transform-origin: center center;
 }
@@ -137,7 +138,7 @@ div.send_btn > button:hover {
     0% {transform: rotate(1deg);}
     100% {transform: rotate(-1deg);}
 }
-*/
+
 footer {
     width: 350px;
     color: #c7c4c7;
