@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 body {
     /*position: relative;*/
 }
@@ -13,7 +15,7 @@ div.layer1 {
     text-align: center;
     background-color: white;
 
-} 
+}
 header h1 {
     font-size: 36px;
     font-weight: 300;
@@ -52,7 +54,7 @@ header h1 {
     width: 350px;
     height: 40px;
     background-color: transparent;
- 
+
 }
 .focus_layout {
     outline: none;
@@ -75,7 +77,7 @@ header h1 {
     background-color: white;
     width: 350px;
     bottom: -10px;
-    left: 0px;           
+    left: 0px;
 }
 .value {
     font-size: 15px;
@@ -87,7 +89,7 @@ header h1 {
 }
 
 .focus_in {
-    color: #ffbe2f; 
+    color: #ffbe2f;
 }
 
 .focus_out {
@@ -112,7 +114,7 @@ header h1 {
     display: none;
     font-size: 12px;
     text-align: left;
-} 
+}
 /*사이즈 옆으로 밀기*/
 
 .focus_extraInfo {
@@ -148,7 +150,7 @@ footer {
     width: 350px;
     color: #c7c4c7;
     font-size: 12px;
-    display: inline-block; 
+    display: inline-block;
     text-align: center;
 }
 a {
