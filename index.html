@@ -3,6 +3,7 @@
 
 <head>
   <title>CSS02</title>
+  <meta charset="utf-8" />
   <link rel="stylesheet" href="./index.css">
   <script type="module">
     import 'https://cdn.jsdelivr.net/npm/vanilla-ripplejs@1.0.6';
@@ -26,8 +27,8 @@
         <div class="inputArea" onmouseover="show_checkbox()" onmouseout="hide_checkbox()">
           <p id="_pwd" class="input_label">Password</p>
           <input type="password" id="pwd" class="input_layout" onkeyup="check_input_len(this.value, this.id)" onfocusin= "focus_in(this.value, this.id); show_checkbox(); pwd_validate_in();" onfocusout="focus_out(this.id); hide_checkbox(); pwd_validate_out();">
-          <div id="pwd_extraInfo" class="extraInfo"> 
-            
+          <div id="pwd_extraInfo" class="extraInfo">
+
           </div>
           <p id="show_check" class="check_input">
             <label><input type="checkbox" onclick="show_or_hide(event)"> show</label>
