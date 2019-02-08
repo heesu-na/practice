@@ -14,19 +14,19 @@
     <header>
       <h1>Great to see you again!</h1>
     </header>
-    <form id="layer2" action="#" onsubmit="submit_login()">
+    <form id="layer2" action="#" onsubmit="return validate_login();">
       <div class="input1">
         <div class="inputArea">
           <p id="_id" class="input_label">Username / email</p>
-          <input type="text" id="id" class="input_layout" onkeyup="check_input_len(this.value, this.id)" onfocusin="focus_in(this.value, this.id)" onfocusout="focus_out(this.id); check_validation_out(this.id);">
+          <input type="text" id="id" class="input_layout" onkeyup="check_input_len(this.value, this.id)" onfocusin="focus_in(this.value, this.id)" onfocusout="focus_out(this.id); id_validate();">
           <div id="id_extraInfo" class="extraInfo"></div>
         </div>
       </div>
       <div class="input2">
         <div class="inputArea" onmouseover="show_checkbox()" onmouseout="hide_checkbox()">
           <p id="_pwd" class="input_label">Password</p>
-          <input type="password" id="pwd" class="input_layout" onkeyup="check_input_len(this.value, this.id)" onfocusin= "focus_in(this.value, this.id); show_checkbox(); check_validation_in(this.id);" onfocusout="focus_out(this.id); hide_checkbox(); check_validation_out(this.id);">
-          <div id="pwd_extraInfo" class="extraInfo">
+          <input type="password" id="pwd" class="input_layout" onkeyup="check_input_len(this.value, this.id)" onfocusin= "focus_in(this.value, this.id); show_checkbox(); pwd_validate_in();" onfocusout="focus_out(this.id); hide_checkbox(); pwd_validate_out();">
+          <div id="pwd_extraInfo" class="extraInfo"> 
             
           </div>
           <p id="show_check" class="check_input">
@@ -35,9 +35,11 @@
         </div>
       </div>
 
+      <div>
         <button id="btn" class="submit_btn" type="submit" onmouseover="point_cursor()">Login
           <div class="rippleJS"></div>
         </button>
+      </div>
     </form>
 
     <footer>

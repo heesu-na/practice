@@ -61,7 +61,12 @@ header h1 {
     border-right: none;
     border-bottom: 1px solid #ffbe2f;
 }
-
+.alert_input_layout {
+    border-bottom: 1px solid #ff5500;
+}
+.alert_extraInfo_layout {
+    color: #ff5500;
+}
 .input_label {
     position: absolute;
     font-size: 18px;
@@ -130,7 +135,7 @@ header h1 {
     cursor: pointer;
 }
 
-.animation {
+.motion {
     animation: swing ease-in-out 0.08s 8 alternate;
     transform-origin: center center;
 }

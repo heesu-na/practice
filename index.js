@@ -57,50 +57,86 @@ function focus_out(val) {
     }
   }
 
-  function submit_login() {
-    console.log('hihihi');
+  function validate_login() {
       var id = document.getElementById('id');
       var pwd = document.getElementById('pwd');
       var layer = document.getElementById('layer2');
+      layer.classList.remove('motion');
+      var valID = id_validate();
+      var valPWD = pwd_validate_out();
       
-      if((id.value.length == 0) || (pwd.value.length == 0)) {
-          layer.classList.add('animation');
+      if((valID == true) && (valPWD == true)){
+          alert("환영합니다");
+          return true;
+      } else { 
+          layer.classList.add('motion');
+          
+          if (valID == false) {
+              id.focus();
+          } else if (valPWD == false) {
+              pwd.focus();
+          }
+          
+          return false;
       }
   }
+
+  function id_validate() {
+      var id = document.getElementById('id');
+      var ch;
+      var len = id.value.length;
+      var extraInfo_val = document.getElementById('id_extraInfo');
+      id.classList.add('alert_input_layout');
+      extraInfo_val.classList.add('alert_extraInfo_layout');
+      extraInfo_val.classList.add('focus_extraInfo');
+      
+      if(len <= 2 ) {
+        if(len == 0) {
+            extraInfo_val.innerHTML = '';
+            extraInfo_val.classList.remove('focus_extraInfo');
+            id.classList.remove('alert_input_layout');
+            extraInfo_val.classList.remove('alert_extraInfo_layout');
+            return false;
+        }
+        extraInfo_val.innerHTML = "Your username is probably longer than this. can you double check?";
+        return false;
+      } else {
+          for(i=0; i<len; i++){ 
+              ch = id.value.charAt(i);
+              if(!(ch>='0' && ch<='9') && !(ch>='a' && ch<='z') && !(ch>='A' && ch<='Z') && !(ch=='_')) {
+                  extraInfo_val.classList.add('focus_extraInfo');
+                  extraInfo_val.innerHTML = "use letters, numbers or '_'. (e.g. arya_starks)";
+                  return false;
+                }
+            }
+            extraInfo_val.innerHTML = '';
+            extraInfo_val.classList.remove('focus_extraInfo');
+            id.classList.remove('alert_input_layout');
+            extraInfo_val.classList.remove('alert_extraInfo_layout');
+            return true;
+        } 
+    }
+  
+
+  function pwd_validate_in() {
+      var extraInfo_val = document.getElementById('pwd_extraInfo');
+      extraInfo_val.classList.add('focus_extraInfo');
+      extraInfo_val.innerHTML = 'Type 6 characters or more';
+  }
+
+  function pwd_validate_out() {
+    var extraInfo_val = document.getElementById('pwd_extraInfo');
+    var pwd = document.getElementById('pwd');
+    extraInfo_val.classList.remove('focus_extraInfo');
+    if(pwd.value.length < 6) {
+        return false;
+    } else {
+        return true;
+    }
+  }
+  
 
   function point_cursor() {
       var btn = document.getElementById('btn');
       btn.classList.add('btn_cursor');
   }
-
-  function check_validation_in(val) {
-      var extraInfo_val = document.getElementById(val+'_extraInfo');
-      extraInfo_val.classList.add('focus_extraInfo');
-      if(val == 'pwd'){
-          extraInfo_val.innerHTML = 'Type 6 characters or more';
-      }
-  }
-
-  function check_validation_out(val) {
-    var extraInfo_val = document.getElementById(val+'_extraInfo');
-    extraInfo_val.innerHTML = '';
-    extraInfo_val.classList.remove('focus_extraInfo');
-  if(val == 'id'){
-      var ch;
-      var id_val = document.getElementById(val);
-      var len = id_val.value.length;
-      if(len <= 2) {
-        extraInfo_val.classList.add('focus_extraInfo');
-        extraInfo_val.innerHTML = "Your username is probably longer than this. can you double check?";
-      } else {
-      for(i=0; i<len; i++){
-          ch = id_val.value.charAt(i);
-          if(!(ch>='0' && ch<='9') && !(ch>='a' && ch<='z') && !(ch>='A' && ch<='Z') && !(ch=='_')) {
-              extraInfo_val.classList.add('focus_extraInfo');
-              extraInfo_val.innerHTML = "use letters, numbers or '_'. (e.g. arya_starks)";
-              break;
-          }
-      } 
-    }
-  }
-}
